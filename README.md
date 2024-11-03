@@ -26,6 +26,3 @@ This tool encrypts and decrypts messages using a **monoalphabetic substitution c
    python3 mono.py --decrypt qwertyuiopasdfghjklzxcvbnm encrypted.txt --out decrypted.txt
 
 
-Simply copy and paste this text into your `README.md` file to improve its appearance and readability.
-
-
