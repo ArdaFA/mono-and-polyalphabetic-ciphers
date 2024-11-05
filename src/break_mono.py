@@ -38,7 +38,7 @@ def main():
     # set the most used 3 letters into key according to 2 inputs (common file, cipher text)
     # first one
 
-    for i in range(len(most_common_three)):
+    for i in range(len(most_common_three)-1):
         # find which letter is most used in common
         letter = most_common_three[i]
         if letter in alphabet:
@@ -76,7 +76,7 @@ def main():
     print("Most used bigrams in ciphertext:", most_cipher_five_bigrams)
 
     # check if the letters in bigrams already exist in key
-    for i in range(0, len(most_cipher_bigrams)-1):
+    for i in range(0, len(most_cipher_bigrams)-2):
         if i % 2 == 0: # first letters of each cipher bigrams
             if most_cipher_five_bigrams[i] != " ": # except the space between
                 if most_cipher_five_bigrams[i] in key: # if the first letter of bigrams is already in key
@@ -118,7 +118,7 @@ def find_most_used_letters(file_path):
     letter_counts = Counter(letters)
 
     # get the 3 most common letters
-    most_common_three = dict(letter_counts.most_common(3))
+    most_common_three = dict(letter_counts.most_common(26))
 
     return most_common_three
     #print(most_common_five)
@@ -138,9 +138,7 @@ def find_most_used_bigrams(file_path):
     pair_counts = Counter(pairs)
 
     # get the 5 most common pairs
-    most_common_five = dict(pair_counts.most_common(5))
+    most_common_five = dict(pair_counts.most_common(3000))
 
     return most_common_five
 
-if __name__ == "__main__":
-    main()
